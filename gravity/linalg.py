@@ -2,6 +2,7 @@ import math
 
 import utest
 
+
 class Float2:
 	def __init__(self, *args):
 		if len(args) == 0:
@@ -16,6 +17,13 @@ class Float2:
 			self.x, self.y = float(args[0]), float(args[1])
 		else:
 			raise TypeError()
+
+	def copy(self):
+		return Float2(self.x, self.y)
+
+	def clear(self):
+		self.x = 0.0
+		self.y = 0.0
 
 	def __repr__(self):
 		return "Float2(%f, %f)" % (self.x, self.y)
